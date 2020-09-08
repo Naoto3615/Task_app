@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_132410) do
+ActiveRecord::Schema.define(version: 2020_09_08_012645) do
 
   create_table "todos", force: :cascade do |t|
     t.string "Title"
     t.text "Detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "User_id"
+    t.index ["User_id"], name: "index_todos_on_User_id"
   end
 
   create_table "users", force: :cascade do |t|
